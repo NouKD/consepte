@@ -1,0 +1,637 @@
+{% extends 'bases/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content%}
+
+<!-- main-news-slider
+			================================================== -->
+			<!--caroucel-->
+            <section class="main-news-slider">
+                <ul class="main-slider">
+                    
+                    {% for acceille in acceilles %}
+                    <li>
+                        
+                        <div class="news-post image-post2">
+                            <div class="post-gallery">
+                                <img src="{{ acceille.image.url }}" alt="">
+                                <div class="hover-box">
+                                    <div class="inner-hover">
+                                        <a class="category-post" href="{% url 'index' %}">{{ acceille.nom }}</a>
+                                        <h2><a href="{% url 'blog' %}">{{ acceille.description }}</a></h2>
+                                        <ul class="post-tags">
+                                            <li><i class="fa fa-clock-o"></i>{{ acceille.date }}</li>
+                                            <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                            <li><a href="#"><i class="fa fa-comments-o"></i><span>0</span></a></li>
+                                            <li><i class="fa fa-eye"></i>872</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </li>
+                    {% endfor %}
+                    
+                </ul>
+                <div class="custom-slider-arrows">
+                    <div class="container">
+                        <div id="slider-prev"></div>
+                        <div id="slider-next"></div>
+                    </div>
+                </div>
+            </section>
+            <!-- End main-news-slider -->
+            
+            
+            <!-- features-today-section
+                ================================================== -->
+            <section class="features-today">
+                <div class="container">
+    
+                    <div class="title-section">
+                        <h1><span>Today's Featured</span></h1>
+                    </div>
+    
+                    <div class="features-today-box owl-wrapper">
+                        <div class="owl-carousel" data-num="4">
+                        
+                            <div class="item news-post standard-post">
+                                <div class="post-gallery">
+                                    <img src="{% static 'upload/news-posts/st1.jpg' %}" alt="">
+                                    <a class="category-post world" href="{% url 'about' %}">Music</a>
+                                </div>
+                                <div class="post-content">
+                                    <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="item news-post standard-post">
+                                <div class="post-gallery">
+                                    <img src="{% static 'upload/news-posts/st2.jpg' %}" alt="">
+                                    <a class="category-post sport" href="#">Sport</a>
+                                </div>
+                                <div class="post-content">
+                                    <h2><a href="{% url 'blog' %}">Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="item news-post standard-post">
+                                <div class="post-gallery">
+                                    <img src="{% static 'upload/news-posts/st3.jpg' %}" alt="">
+                                    <a class="category-post food" href="#">Food &amp; Health</a>
+                                </div>
+                                <div class="post-content">
+                                    <h2><a href="{% url 'blog' %}">Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.</a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="item news-post standard-post">
+                                <div class="post-gallery">
+                                    <img src="{% static 'upload/news-posts/st4.jpg' %}" alt="">
+                                    <a class="category-post sport" href="#">Sport</a>
+                                </div>
+                                <div class="post-content">
+                                    <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                            <div class="item news-post standard-post">
+                                <div class="post-gallery">
+                                    <img src="{% static 'upload/news-posts/st1.jpg' %}" alt="">
+                                    <a class="category-post travel" href="#">Travel</a>
+                                </div>
+                                <div class="post-content">
+                                    <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+    
+                </div>
+            </section>
+            <!-- End features-today-section -->
+    
+            <!-- latest-fashion-section 
+			================================================== -->
+            <section class="latest-fashion">
+                <div class="container">
+                    <div class="title-section white">
+                        <h1><span>latest fashion</span></h1>
+                    </div>
+
+                    <div class="fatest-fashion owl-wrapper">
+                        <div class="owl-carousel" data-num="3">
+                        {% for fashion in fashion %}
+                        
+                            <div class="{% cycle 'item news-post fashion-post' 'item news-post fashion-post' 'item news-post fashion-post' 'item news-post fashion-post' %}">
+                                <div class="post-gallery">
+                                    <img alt="" src="{{ fashion.image.url }}">
+                                </div>
+                                <div class="post-content">
+                                    <a href="{% url 'blog' %}">{{ fashion.nom }}</a>
+                                    <h2><a href="#">{{ fashion.description }}</a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                        <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                        <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                        {% endfor %}    
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- End latest-fashion-section -->
+
+        <!-- block-wrapper-section
+                ================================================== -->
+                 <section class="block-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8">
+    
+                            <!-- block content -->
+                            <div class="block-content">
+    
+                                <!-- masonry box -->
+                                <div class="masonry-box">
+    
+                                    <div class="title-section">
+                                        <h1><span>Latest Articles</span></h1>
+                                    </div>
+    
+                                    <div class="latest-articles iso-call">
+    
+                                        <div class="news-post standard-post2 default-size">
+                                            <div class="post-gallery">
+                                                <img src="{% static 'upload/news-posts/1.jpg' %}" alt="">
+                                            </div>
+                                            <div class="post-title">
+                                                <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                <ul class="post-tags">
+                                                    <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                    <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                                    <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+    
+                                        <div class="news-post standard-post2">
+                                            <div class="post-gallery">
+                                                <img src="{% static 'upload/news-posts/2.jpg' %}" alt="">
+                                            </div>
+                                            <div class="post-title">
+                                                <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                <ul class="post-tags">
+                                                    <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                    <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                                    <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+    
+                                        <div class="news-post standard-post2">
+                                            <div class="post-gallery">
+                                                <img src="{% static 'upload/news-posts/3.jpg' %}" alt="">
+                                            </div>
+                                            <div class="post-title">
+                                                <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                <ul class="post-tags">
+                                                    <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                    <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                                    <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+    
+                                        <div class="news-post standard-post2">
+                                            <div class="post-gallery">
+                                                <img src="{% static 'upload/news-posts/4.jpg' %}" alt="">
+                                            </div>
+                                            <div class="post-title">
+                                                <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                <ul class="post-tags">
+                                                    <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                    <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                                    <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+    
+                                        <div class="news-post standard-post2">
+                                            <div class="post-gallery">
+                                                <img src="{% static 'upload/news-posts/5.jpg' %}" alt="">
+                                            </div>
+                                            <div class="post-title">
+                                                <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                <ul class="post-tags">
+                                                    <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                    <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                                    <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+    
+                                        <div class="news-post standard-post2">
+                                            <div class="post-gallery">
+                                                <img src="{% static 'upload/news-posts/6.jpg' %}" alt="">
+                                            </div>
+                                            <div class="post-title">
+                                                <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                <ul class="post-tags">
+                                                    <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                    <li><i class="fa fa-user"></i>by <a href="#">John Doe</a></li>
+                                                    <li><a href="#"><i class="fa fa-comments-o"></i><span>23</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+    
+                                    </div>
+    
+                                </div>
+                                <!-- End masonry box -->
+    
+                                <!-- pagination box -->
+                                <div class="pagination-box">
+                                    <ul class="pagination-list">
+                                        <li><a class="active" href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><span>...</span></li>
+                                        <li><a href="#">9</a></li>
+                                        <li><a href="#">Next</a></li>
+                                    </ul>
+                                    <p>Page 1 of 9</p>
+                                </div>
+                                <!-- End pagination box -->
+    
+                            </div>
+                            <!-- End block content -->
+    
+                        </div>
+    
+                        <div class="col-sm-4">
+    
+                            <!-- sidebar -->
+                            <div class="sidebar">
+    
+                                <div class="widget tab-posts-widget">
+    
+                                    <ul class="nav nav-tabs" id="myTab">
+                                        <li class="active">
+                                            <a href="#option1" data-toggle="tab">Popular</a>
+                                        </li>
+                                        <li>
+                                            <a href="#option2" data-toggle="tab">Recent</a>
+                                        </li>
+                                        <li>
+                                            <a href="#option3" data-toggle="tab">Top Reviews</a>
+                                        </li>
+                                    </ul>
+    
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="option1">
+                                            <ul class="list-posts">
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw1.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw2.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Sed arcu. Cras consequat. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw3.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw4.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw5.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane" id="option2">
+                                            <ul class="list-posts">
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw3.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Phasellus ultrices nulla quis nibh. Quisque a lectus. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw4.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw5.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw1.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw2.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Sed arcu. Cras consequat.</a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>										
+                                        </div>
+                                        <div class="tab-pane" id="option3">
+                                            <ul class="list-posts">
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw4.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Donec consectetuer ligula vulputate sem tristique cursus. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw1.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw3.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Phasellus ultrices nulla quis nibh. Quisque a lectus.  </a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw2.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Sed arcu. Cras consequat.</a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+    
+                                                <li>
+                                                    <img src="{% static 'upload/news-posts/listw5.jpg' %}" alt="">
+                                                    <div class="post-content">
+                                                        <h2><a href="{% url 'blog' %}">Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</a></h2>
+                                                        <ul class="post-tags">
+                                                            <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>										
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="widget tags-widget">
+    
+                                    <div class="title-section">
+                                        <h1><span>Popular Tags</span></h1>
+                                    </div>
+    
+                                    <ul class="tag-list">
+                                        <li><a href="#">News</a></li>
+                                        <li><a href="#">Fashion</a></li>
+                                        <li><a href="#">Politics</a></li>
+                                        <li><a href="#">Sport</a></li>
+                                        <li><a href="#">Food</a></li>
+                                        <li><a href="#">Videos</a></li>
+                                        <li><a href="#">Business</a></li>
+                                        <li><a href="#">Travel</a></li>
+                                        <li><a href="#">World</a></li>
+                                        <li><a href="#">Music</a></li>
+                                    </ul>
+    
+                                </div>
+    
+                                <div class="advertisement">
+                                    <div class="desktop-advert">
+                                        <span>Advertisement</span>
+                                        <img src="{% static 'upload/addsense/300x250.jpg' %}" alt="">
+                                    </div>
+                                    <div class="tablet-advert">
+                                        <span>Advertisement</span>
+                                        <img src="{% static 'upload/addsense/200x200.jpg' %}" alt="">
+                                    </div>
+                                    <div class="mobile-advert">
+                                        <span>Advertisement</span>
+                                        <img src="{% static 'upload/addsense/300x250.jpg' %}" alt="">
+                                    </div>
+                                </div>
+    
+                            </div>
+                            <!-- End sidebar -->
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+            </section>
+                <!-- End block-wrapper-section -->
+        
+
+            <!-- feature-video-section 
+                ================================================== -->
+            <section class="feature-video">
+                <div class="container">
+                    <div class="title-section white">
+                        <h1><span>Photo Galleries</span></h1>
+                    </div>
+    
+                    <div class="features-video-box owl-wrapper">
+                        <div class="owl-carousel" data-num="4">
+                        
+                            <div class="item news-post image-post3">
+                                <img alt="" src="{% static 'upload/news-posts/gal1.jpg' %}">
+                                <div class="hover-box">
+                                    <h2><a href="{% url 'blog' %}">Lorem ipsum dolor sit consectetuer adipiscing elit. Donec odio. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <div class="item news-post image-post3">
+                                <img alt="" src="{% static 'upload/news-posts/gal2.jpg' %}">
+                                <div class="hover-box">
+                                    <h2><a href="{% url 'blog' %}">Quisque volutpat mattis eros. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <div class="item news-post image-post3">
+                                <img alt="" src="{% static 'upload/news-posts/gal3.jpg' %}">
+                                <div class="hover-box">
+                                    <h2><a href="{% url 'blog' %}">Nullam malesuada erat ut turpis. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <div class="item news-post image-post3">
+                                <img alt="" src="{% static 'upload/news-posts/gal4.jpg' %}">
+                                <div class="hover-box">
+                                    <h2><a href="{% url 'blog' %}">Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <div class="item news-post image-post3">
+                                <img alt="" src="{% static 'upload/news-posts/gal5.jpg' %}">
+                                <div class="hover-box">
+                                    <h2><a href="{% url 'blog' %}">Lorem ipsum dolor sit consectetuer adipiscing elit. Donec odio. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <div class="item news-post image-post3">
+                                <img alt="" src="{% static 'upload/news-posts/gal6.jpg' %}">
+                                <div class="hover-box">
+                                    <h2><a href="{% url 'blog' %}">Quisque volutpat mattis eros. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <div class="item news-post image-post3">
+                                <img alt="" src="{% static 'upload/news-posts/gal1.jpg' %}">
+                                <div class="hover-box">
+                                    <h2><a href="{% url 'blog' %}">Nullam malesuada erat ut turpis. </a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        
+                            <div class="item news-post image-post3">
+                                <img alt="" src="{% static 'upload/news-posts/gal2.jpg' %}">
+                                <div class="hover-box">
+                                    <h2><a href="{% url 'blog' %}">Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</a></h2>
+                                    <ul class="post-tags">
+                                        <li><i class="fa fa-clock-o"></i>27 may 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End feature-video-section -->
+    
+        </div>
+        <!-- End Container -->
+        {% endblock content%}
